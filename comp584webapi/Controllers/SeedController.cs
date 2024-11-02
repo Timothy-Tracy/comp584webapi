@@ -98,5 +98,10 @@ namespace comp584webapi.Controllers
             return new JsonResult(cityCount);
 
         }
+        [HttpPost("Users")]
+        public async Task<IActionResult> ImportUsersAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
