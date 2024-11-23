@@ -9,6 +9,7 @@ using DataModel;
 using comp584webapi.DTO;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace comp584webapi.Controllers
 {
@@ -46,6 +47,7 @@ namespace comp584webapi.Controllers
 
         // GET: api/Countries/5
         [HttpGet("countrypopulation/{id}")]
+        [Authorize]
         public async Task<ActionResult<CountryPopulation>> GetCountryPopulation(int id)
         {
             var country = await _context.Countries.FindAsync(id);
